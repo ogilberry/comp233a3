@@ -1,0 +1,75 @@
+/* header is for the bit above the navbar, not the whole header */
+.header{
+	background-color: #dd5588;
+	height:128px;
+	margin:0;
+	padding:0;
+	border-bottom: 1px solid #dddddd;
+}
+.headeritem{
+	float:left;
+}
+#headertitle{
+	margin-left: 100px;
+	margin-top:40px;
+	text-align: left;
+}
+.navbar {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.navbardiv{
+	background-color: #ff0000;
+	height:700px;
+	overflow:auto;
+}
+
+.navbuttonli {
+	display:block;
+}
+.navbuttona {
+	display: block;
+	padding-top: 18px;
+	padding-bottom: 15px;
+	padding-left: 10%;
+	text-align: left;
+	color: white;
+	text-decoration:none;
+	border-bottom: 1px solid #dddddd;
+}
+.navbuttona:hover{
+	background-color: #dd8888;
+}
+body {
+	background-color: #dd8888;
+	margin:0;
+}
+
+.navpos{
+	display:block;
+	float:left;
+	height:700px;
+	overflow:auto;
+	width:12%;
+}
+
+.contentpos{
+	display:block;
+	height:700px;
+	float:left;
+	background-color: #ddbbbb;
+	overflow:auto;
+	width:88%
+}
+
+.maincontent{
+	padding-left:10%;
+	padding-right:10%;
+	padding-top:15px;
+	text-align:left;
+}
+
+input[type="submit"]{
+	margin-top:10px;
+}
