@@ -1,10 +1,8 @@
 /* header is for the bit above the navbar, not the whole header */
 .header{
-	background-color: #dd5588;
 	height:128px;
 	margin:0;
 	padding:0;
-	border-bottom: 1px solid #dddddd;
 }
 .headeritem{
 	float:left;
@@ -20,7 +18,6 @@
 	padding: 0;
 }
 .navbardiv{
-	background-color: #ff0000;
 	height:700px;
 	overflow:auto;
 }
@@ -34,15 +31,10 @@
 	padding-bottom: 15px;
 	padding-left: 10%;
 	text-align: left;
-	color: white;
 	text-decoration:none;
-	border-bottom: 1px solid #dddddd;
 }
-.navbuttona:hover{
-	background-color: #dd8888;
-}
+
 body {
-	background-color: #dd8888;
 	margin:0;
 }
 
@@ -58,7 +50,6 @@ body {
 	display:block;
 	height:700px;
 	float:left;
-	background-color: #ddbbbb;
 	overflow:auto;
 	width:88%
 }

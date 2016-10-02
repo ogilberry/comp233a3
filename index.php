@@ -1,24 +1,53 @@
-<!DOCTYPE html>
-
 <?php
+	//set up runtime error reporting
     ini_set("error_reporting",E_ALL);
     ini_set("log_errors","1");
     ini_set("error_log","php_errors.txt");
+	
+	//initialise all the cookies for first visit
+	if(!isset($_COOKIE["loggedin"]) | !isset($_COOKIE['theme']) | !isset($_COOKIE['textsize']) | !isset($_COOKIE['navpos'])){
+
+		$year = 60*60*24*365;
+	
+		if(!isset($_COOKIE["loggedin"])){
+			setcookie("loggedin", 0, time()+$year, '/');
+		}	
+		//if preference cookies are not set, set them to the default values
+		if(!isset($_COOKIE['theme'])){	//theme is 'red' or 'blue'
+			setcookie('theme', 'red', time()+$year, "/");
+		}
+		if(!isset($_COOKIE['navpos'])){		//value 'left' or 'right'
+			setcookie('navpos', 'left', time()+$year, "/");
+		}
+		if(!isset($_COOKIE['textsize'])){		//value 80, 90, 100, 110, 120 (not in quotes)
+			setcookie('textsize', 100, time()+$year, "/");
+		}
+		//reload
+		header('Location: ../index.php');
+	}
 ?>
 
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>PHP and cookies</title>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="stylesheets/mystyle.css">
+		<?php require_once(__DIR__ .'/scripts/getfontsheet.php'); ?>
+		<?php require_once(__DIR__ .'/scripts/getthemesheet.php'); ?>
 	</head>
-	
 	
 	<body>
 	
 		<div class = "header">
 			<h1 class="headeritem" id="headertitle">COMP233 Assignment 3 - PHP and cookies</h1>
 		</div>
+	
+		
+		<?php
+			//whichever is output first, nav or content, will be on the left side.
+			if($_COOKIE['navpos']=='left'){require_once(__DIR__ .'/scripts/shownavbar.php');}
+		?>
 		
 		<div class="contentpos">
 			<div class="maincontent">
@@ -43,21 +72,9 @@
 			</div>
 		</div>
 		
-		<div class="navpos">
-			<nav>
-				<div class="navbardiv">
-					<!--nav bar is just a list of links/buttons-->
-					<ul class="navbar">
-						<li class="navbuttonli"><a class="navbuttona" href="index.php">Home</a></li>
-						<li class="navbuttonli"><a class="navbuttona" href="pages/pageone.php">Page One</a></li>
-						<li class="navbuttonli"><a class="navbuttona" href="pages/pagetwo.php">Page Two</a></li>
-						<li class="navbuttonli"><a class="navbuttona" href="pages/pagethree.php">Page Three</a></li>
-						<li class="navbuttonli"><a class="navbuttona" href="pages/login.php">Log in</a></li>
-					</ul>
-				</div>
-			</nav>
-				
-		</div>
+		<?php
+			if($_COOKIE['navpos']=='right'){require_once(__DIR__ .'/scripts/shownavbar.php');}
+		?>
 		
 	</body>
 </html>

@@ -1,0 +1,25 @@
+/* colour styling for the classes that need it */
+.header{
+	background-color: #5588dd;
+	border-bottom: 1px solid #dddddd;
+}
+
+.navbardiv{
+	background-color: #0000ff;
+}
+
+.navbuttona {
+	color: white;
+	border-bottom: 1px solid #dddddd;
+}
+
+.navbuttona:hover{
+	background-color: #8888dd;
+}
+body {
+	background-color: #8888dd;
+}
+
+.contentpos{
+	background-color: #bbbbdd;
+}
